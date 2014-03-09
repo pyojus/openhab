@@ -1,0 +1,53 @@
+﻿sitemap default label="Päävalikko" {
+	Frame {
+		Text label="MH" icon="corridor" {
+			Switch item=Light_MH1 label="MH1 Valo"
+			Switch item=Light_MH2 label="MH2 Valo"
+			Switch item=Light_MH3 label="MH3 Valo"
+			Switch item=Light_MH4 label="MH4 Valo"
+			Switch item=Light_MH5 label="MH5 Valo"
+		}
+		Text label="ET" icon="corridor" {
+			Switch item=Light_Corridor_Wall label="ET Seinävalo"
+			Switch item=Light_Corridor_Ceiling label="ET Kattovalo"
+		}
+		Text label="KHH" icon="corridor" {
+			Switch item=Light_Utility_Room_Ceiling label="KHH Kattovalo"
+			Switch item=Light_Utility_Room_Desk label="KHH Välitilan Valo"
+		}
+		Text label="OH" icon="corridor" {
+			Switch item=Light_Table label="Ruokapöydän Valo"
+			Switch item=Light_Couch label="OH Valo"
+			Switch item=Light_Fireplace label="Takkavalot"
+			Switch item=Light_Kitchen_Indirect label="K Epäsuora Valaistus"
+			Switch item=Light_Kitchen_Desk label="K Tasovalo"
+			Switch item=Light_Bar_Desk label="K Baaritiskin Valo"
+			Switch item=Switch_Speakers label="Kaiuttimet"
+			Switch item=Light_Lounge_Indirect label="OH Epäsuora Valaistus"
+		}
+		Text label="Piha" icon="corridor" {
+			Switch item=Light_Yard_East label="Piha Itävalo"
+			Switch item=Light_Yard_West label="Piha Länsivalo"
+			Switch item=Light_Yard_South label="Piha Etelävalo"
+		}
+		Text label="Terassi" icon="corridor" {
+			Switch item=Light_Terrace_East label="Terassi Itävalo"
+			Switch item=Light_Terrace_West label="Terassi Länsivalo"
+		}
+	}
+	Frame {
+		Switch item=Sleep mappings=[OFF="All Off"]
+	}
+	Frame {
+		Text item=Temperature_Outdoor
+		Switch item=Switch_Away
+	}
+	Frame {
+		Text label="Lattialämmitys" {
+			Text item=Temperature_L1
+			Text item=Percent_L1
+			Text item=Temperature_L2
+			Text item=Percent_L2
+		}
+	}
+}
