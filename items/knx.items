@@ -4,42 +4,42 @@ Group gHome (gAll)
 Group:Switch:OR(ON, OFF) Sleep "Unikytkin [(%d)]" { knx="0/0/6" }
 
 Group gBedrooms (gHome)
-Switch Light_MH1 (gBedrooms, Sleep) { knx="<0/0/1" }
-Switch Light_MH2 (gBedrooms) { knx="<0/0/2" }
-Switch Light_MH3 (gBedrooms) { knx="<0/0/3" }
-Switch Light_MH4 (gBedrooms, Sleep) { knx="<0/0/4" }
-Switch Light_MH5 (gBedrooms) { knx="<0/0/5" }
+Switch Light_MH1 (gBedrooms, Sleep) "MH1" { knx="<0/0/1" }
+Switch Light_MH2 (gBedrooms) "MH2" { knx="<0/0/2" }
+Switch Light_MH3 (gBedrooms) "MH3" { knx="<0/0/3" }
+Switch Light_MH4 (gBedrooms, Sleep) "MH4" { knx="<0/0/4" }
+Switch Light_MH5 (gBedrooms) "MH5" { knx="<0/0/5" }
 
 Group gCorridor (gHome)
-Switch Light_Corridor_Wall (gCorridor, Sleep) { knx="<0/1/0" }
-Switch Light_Corridor_Ceiling (gCorridor, Sleep) { knx="<0/1/1" }
+Switch Light_Corridor_Wall (gCorridor, Sleep) "Eteinen seinä" { knx="<0/1/0" }
+Switch Light_Corridor_Ceiling (gCorridor, Sleep) "Eteinen katto" { knx="<0/1/1" }
 
 Group gUtility_Room (gHome)
-Switch Light_Utility_Room_Ceiling (gUtility_Room, Sleep) { knx="<0/2/0" }
-Switch Light_Utility_Room_Desk (gUtility_Room, Sleep) { knx="<0/2/2" }
+Switch Light_Utility_Room_Ceiling (gUtility_Room, Sleep) "KHH katto" { knx="<0/2/0" }
+Switch Light_Utility_Room_Desk (gUtility_Room, Sleep) "KHH työtaso" { knx="<0/2/2" }
 
 Group gTerrace (gHome)
-Switch Light_Terrace_East (gTerrace, Sleep) { knx="<0/4/0" }
-Switch Light_Terrace_West (gTerrace, Sleep) { knx="<0/4/5" }
+Switch Light_Terrace_East (gTerrace, Sleep) "Terassi itä" { knx="<0/4/0" }
+Switch Light_Terrace_West (gTerrace, Sleep) "Terassi länsi" { knx="<0/4/5" }
 
 Group gYard (gHome)
-Switch Light_Yard_East (gYard, Sleep) { knx="<0/4/1" }
-Switch Light_Yard_West (gYard, Sleep) { knx="<0/4/2" }
-Switch Light_Yard_South (gYard, Sleep) { knx="<0/4/3" }
+Switch Light_Yard_East (gYard, Sleep) "Itäpiha" { knx="<0/4/1" }
+Switch Light_Yard_West (gYard, Sleep) "Länsipiha" { knx="<0/4/2" }
+Switch Light_Yard_South (gYard, Sleep) "Eteläpiha" { knx="<0/4/3" }
 
 Group gLounge (gHome)
-Switch Light_Table (gLounge, Sleep) { knx="<0/7/0" }
-Switch Light_Couch (gLounge, Sleep) { knx="<0/7/1" }
-Switch Light_Fireplace (gLounge, Sleep) { knx="<0/7/2" }
-Switch Light_Kitchen_Indirect (gLounge, Sleep) { knx="<0/7/3" }
-Switch Light_Kitchen_Desk (gLounge, Sleep) { knx="<0/7/4" }
-Switch Light_Bar_Desk (gLounge, Sleep) { knx="<0/7/5" }
-Switch Switch_Speakers (gLounge, Sleep) { knx="<0/7/6" }
-Switch Light_Lounge_Indirect (gLounge, Sleep) { knx="<0/7/7" }
+Switch Light_Table (gLounge, Sleep) "OH ruokapöytä" { knx="<0/7/0" }
+Switch Light_Couch (gLounge, Sleep) "OH sohvat" { knx="<0/7/1" }
+Switch Light_Fireplace (gLounge, Sleep) "Takka" { knx="<0/7/2" }
+Switch Light_Kitchen_Indirect (gLounge, Sleep) "K epäsuora" { knx="<0/7/3" }
+Switch Light_Kitchen_Desk (gLounge, Sleep) "K taso" { knx="<0/7/4" }
+Switch Light_Bar_Desk (gLounge, Sleep) "K baaritiski" { knx="<0/7/5" }
+Switch Switch_Speakers (gLounge, Sleep) "OH kaiuttimet" { knx="<0/7/6" }
+Switch Light_Lounge_Indirect (gLounge, Sleep) "OH epäsuora" { knx="<0/7/7" }
 
 Group gTemperature (gHome)
 
-Number Temperature_Outdoor "Ulko [%.1f C]" <temperature> (gTemperature) {http="<[http://192.168.1.101/request?@S_227_85;:30000:REGEX(.*?=(.*);.*?)]"}
+Number Temperature_Outdoor "Piha [%.1f C]" <temperature> (gTemperature) {http="<[http://192.168.1.101/request?@S_227_85;:30000:REGEX(.*?=(.*);.*?)]"}
 Number Temperature_L1 "L1 [%.1f C]" <temperature> (gTemperature) {http="<[http://192.168.1.101/request?@S_259_85;:30000:REGEX(.*?=(.*);.*?)]"}
 Number Percent_L1 "L1 [%.1f %%]" <heating> (gTemperature) {http="<[http://192.168.1.101/request?@S_272_85;:30000:REGEX(.*?=(.*);.*?)]"}
 
