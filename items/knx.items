@@ -1,36 +1,38 @@
 Group gAll
 Group gHome (gAll)
 
-Group:Switch:OR(ON, OFF) Sleep "Unikytkin [(%d)]" { knx="0/0/6" }
+Group gAway
+
+Group:Switch:OR(ON, OFF) gSleep "Unikytkin [(%d)]" { knx="0/0/6" }
 Switch Away "Poissa" { knx="0/3/0" }
 Switch AwayLong "Kauan Poissa" { knx="0/3/1" }
 Number HomeStatus "Tila"
 
-Group gBedrooms (gHome)
-Switch Light_MH1 (gBedrooms, Sleep) "MH1" { knx="<0/0/1" }
+Group gBedrooms (gHome, gAway)
+Switch Light_MH1 (gBedrooms, gSleep) "MH1" { knx="<0/0/1" }
 Switch Light_MH2 (gBedrooms) "MH2" { knx="<0/0/2" }
 Switch Light_MH3 (gBedrooms) "MH3" { knx="<0/0/3" }
-Switch Light_MH4 (gBedrooms, Sleep) "MH4" { knx="<0/0/4" }
+Switch Light_MH4 (gBedrooms, gSleep) "MH4" { knx="<0/0/4" }
 Switch Light_MH5 (gBedrooms) "MH5" { knx="<0/0/5" }
 
-Group gCorridor (gHome, Sleep)
+Group gCorridor (gHome, gSleep, gAway)
 Switch Light_Corridor_Wall (gCorridor) "Eteinen seinä" { knx="<0/1/0" }
 Switch Light_Corridor_Ceiling (gCorridor) "Eteinen katto" { knx="<0/1/1" }
 
-Group gUtility_Room (gHome, Sleep)
+Group gUtility_Room (gHome, gSleep, gAway)
 Switch Light_Utility_Room_Ceiling (gUtility_Room) "KHH katto" { knx="<0/2/0" }
 Switch Light_Utility_Room_Desk (gUtility_Room) "KHH työtaso" { knx="<0/2/2" }
 
-Group gTerrace (gHome, Sleep)
+Group gTerrace (gHome, gSleep, gAway)
 Switch Light_Terrace_East (gTerrace) "Terassi itä" { knx="<0/4/0" }
 Switch Light_Terrace_West (gTerrace) "Terassi länsi" { knx="<0/4/5" }
 
-Group gYard (gHome, Sleep)
+Group gYard (gHome, gSleep, gAway)
 Switch Light_Yard_East (gYard) "Itäpiha" { knx="<0/4/1" }
 Switch Light_Yard_West (gYard) "Länsipiha" { knx="<0/4/2" }
 Switch Light_Yard_South (gYard) "Eteläpiha" { knx="<0/4/3" }
 
-Group gLounge (gHome, Sleep)
+Group gLounge (gHome, gSleep, gAway)
 Switch Light_Table (gLounge) "OH ruokapöytä" { knx="<0/7/0" }
 Switch Light_Couch (gLounge) "OH sohvat" { knx="<0/7/1" }
 Switch Light_Fireplace (gLounge) "Takka" { knx="<0/7/2" }
